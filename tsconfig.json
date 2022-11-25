@@ -1,17 +1,17 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
+    "target": "ESNext",       //编译后的目标javascript版本
     "useDefineForClassFields": true,
-    "module": "ESNext",
-    "moduleResolution": "Node",
+    "module": "ESNext",     //代码的模块系统， Node.js的CommonJS、ES6标准的esnext、requireJs的AMD
+    "moduleResolution": "Node",   //编译器的工作方式，"node" and "classic"；classic在2019年已经废弃，现在只剩node可选
     "strict": true,
     "jsx": "preserve",
     "resolveJsonModule": true,
-    "isolatedModules": true,
-    "esModuleInterop": true,
+    "isolatedModules": true,  //将每个文件作为单独的模块使用
+    "esModuleInterop": true,  //允许使用commonjs的方式import默认文件
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
-    "noEmit": true
+    "noEmit": true  //表示当发生错误的时候，编译器不会生成JavaScript代码
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
   // "include": [
