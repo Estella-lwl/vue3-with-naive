@@ -7,7 +7,10 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    Header: typeof import('./src/components/layout/components/header.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    Layout: typeof import('./src/components/layout/index.vue')['default']
+    Menu: typeof import('./src/components/layout/components/Menu/index.vue')['default']
     NButton: typeof import('naive-ui')['NButton']
     NCol: typeof import('naive-ui')['NCol']
     NDatepicker: typeof import('naive-ui')['NDatepicker']
@@ -15,12 +18,24 @@ declare module '@vue/runtime-core' {
     NDialog: typeof import('naive-ui')['NDialog']
     NForm: typeof import('naive-ui')['NForm']
     NFormItem: typeof import('naive-ui')['NFormItem']
+    NGi: typeof import('naive-ui')['NGi']
+    NGrid: typeof import('naive-ui')['NGrid']
     NInput: typeof import('naive-ui')['NInput']
+    NLayout: typeof import('naive-ui')['NLayout']
+    NLayoutContent: typeof import('naive-ui')['NLayoutContent']
+    NLayoutFooter: typeof import('naive-ui')['NLayoutFooter']
+    NLayoutHeader: typeof import('naive-ui')['NLayoutHeader']
+    NLayoutSider: typeof import('naive-ui')['NLayoutSider']
+    NMenu: typeof import('naive-ui')['NMenu']
     NModal: typeof import('naive-ui')['NModal']
     NRow: typeof import('naive-ui')['NRow']
     NSelect: typeof import('naive-ui')['NSelect']
+    NSpace: typeof import('naive-ui')['NSpace']
+    NSwitch: typeof import('naive-ui')['NSwitch']
     NTimePicker: typeof import('naive-ui')['NTimePicker']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Sider: typeof import('./src/components/layout/components/sider.vue')['default']
+    Src: typeof import('./src/components/layout/src/index.vue')['default']
   }
 }

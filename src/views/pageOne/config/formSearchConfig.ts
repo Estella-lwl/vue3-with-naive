@@ -1,5 +1,7 @@
+import { SearchConfig } from '../../../base-ui/BasicForm';
+
 // 表单所有配置：
-export const SearchConfig = {
+export const searchConfig:  SearchConfig= {
   // 表单项的配置：
   formItems: [
     {
@@ -41,11 +43,14 @@ export const SearchConfig = {
     },
   ],
   // 响应式布局的配置：无特别设置时使用默认布局。
-  // colLayout: {
-  //   xl: 6,
-  //   lg: 8,
-  //   md: 10,
-  //   xs: 24,
-  //   sm: 24,
-  // },
+  colLayout: {
+    xGap: '12',
+    cols: '4',
+    responsive: 'screen',
+    labelPlacement: 'left'
+  },
+  labelWidth: '200',
+  itemStyle: {
+    // padding: "20px 60px"
+  }
 };

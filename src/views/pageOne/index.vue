@@ -1,6 +1,6 @@
 <template>
   <div>
-    <BasicForm v-bind="SearchConfig">
+    <BasicForm v-bind="searchConfig">
       <template #header>
         <h2>查询</h2>
       </template>
@@ -18,21 +18,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import BasicForm from "../../base-ui/BasicForm";
-import { SearchConfig } from "./config/formSearchConfig";
-
-// const props = defineProps({
-//   modalConfig: {
-//     type: Object,
-//     require: true,
-//   },
-//   formSearch: {
-//     type: Object,
-//     require: true,
-//   },
-// });
-// const formItem = props.formSearch;
-// const formData = ref<any>({});
-// console.log("formItem: ", formItem);
+import { searchConfig } from "./config/formSearchConfig";
 </script>
 
 <style scoped></style>

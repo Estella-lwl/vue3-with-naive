@@ -5,27 +5,26 @@ import type { RouteRecordRaw } from 'vue-router'
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    redirect: '/pageOne'
+    redirect: '/Layout'
   },
   {
-    path: '/pageOne',
+    path: '/PageOne',
     // name: 'First',
     component: () => import('@/views/pageOne/index.vue')
   },
   {
-    path: '/pageTwo',
+    path: '/PageTwo',
     // name: 'Second',
     component: () => import('@/views/pageTwo/index.vue')
   },
   {
-    path: '/',
-    redirect: '/test'
+    path: '/Test',
+    component: () => import('@/views/test/index.vue')
   },
-  // {
-	// 	path: '/:catchAll(.*)',
-	// 	// hidden: true,
-	// 	component: () => import('@/views/error/404.vue')
-	// }
+  {
+    path: '/Layout',
+    component: () => import('@/components/layout/index.vue')
+  },
 ]
 
 

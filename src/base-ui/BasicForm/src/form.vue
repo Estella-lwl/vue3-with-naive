@@ -3,16 +3,17 @@
     <div>
       <slot name="header"></slot>
     </div>
-    <n-form>
-      <n-row>
+    <n-form :label-placement="colLayout.labelPlacement" :label-width="100">
+      <n-grid v-bind="colLayout">
         <template v-for="item in formItems" :key="item.label">
-          <n-col>
-            <n-form-item :label="item.label" :rules="item.rules">
+          <n-gi>
+            <n-form-item
+              :label="item.label"
+              :rules="item.rules"
+              :style="itemStyle"
+            >
               <template v-if="item.type === 'input'">
-                <n-input
-                  :placeholder="item.placeholder"
-                  style="width: 100%"
-                ></n-input>
+                <n-input :placeholder="item.placeholder"></n-input>
               </template>
               <template v-else-if="item.type === 'select'">
                 <n-select
@@ -26,9 +27,9 @@
                 </n-date-picker>
               </template>
             </n-form-item>
-          </n-col>
+          </n-gi>
         </template>
-      </n-row>
+      </n-grid>
     </n-form>
 
     <div>
@@ -50,22 +51,22 @@ export default defineComponent({
     },
     labelWidth: {
       type: String,
-      default: "100px",
+      default: "100",
     },
     // 一般情况下表单项的样式是统一的，所以样式单独拎出来：
     itemStyle: {
       type: Object,
-      default: () => ({ padding: "10px 40px" }),
+      default: () => ({ padding: "30px 30px" }),
     },
     // 响应式布局：
     colLayout: {
       type: Object,
       default: () => ({
-        xl: 6, //大于1920时；一个占6份，24/6=4，也就是一行里面占4个。
-        lg: 8,
-        md: 12,
-        sm: 24,
-        xs: 24,
+        // xl: 6, //大于1920时；一个占6份，24/6=4，也就是一行里面占4个。
+        xGap: "12",
+        cols: "4",
+        responsive: "screen",
+        labelPlacement: "left",
       }),
     },
   },
@@ -77,7 +78,7 @@ export default defineComponent({
 });
 </script>
 
-<style lang="less">
+<style scoped lang="less">
 .form {
   padding: 20px 30px;
   background-color: aliceblue;
